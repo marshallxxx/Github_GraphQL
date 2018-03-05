@@ -6,22 +6,26 @@
 //  Copyright © 2018 None. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol ModuleBuilder {
-    func buildRepoModule() -> RepoView
-}
+struct ModuleBuilder {
 
-struct DefaultModuleBuilder: ModuleBuilder {
+    static let shared = ModuleBuilder()
 
-    func buildRepoModule() -> RepoView {
+    private var environment: Environment
+
+    private init(environment: Environment = DefaultEnvironment()) {
+        self.environment = environment
+    }
+
+    func buildRepoModule() -> UIViewController {
         let storyboard = AppStoryboard.main.reference()
         let identifier = String(describing: RepoViewController.self)
         let viewController = storyboard
             .instantiateViewController(withIdentifier: identifier) as! RepoViewController
         let presenter = RepoPresenter(view: viewController)
         viewController.presenter = presenter
-        return viewController
+        return viewController as UIViewController
     }
 
 }

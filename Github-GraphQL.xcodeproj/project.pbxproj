@@ -13,6 +13,7 @@
 		3F6313AC204D9B4F0099F510 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313AB204D9B4F0099F510 /* ModuleBuilder.swift */; };
 		3F6313AE204D9BAB0099F510 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313AD204D9BAB0099F510 /* AppStoryboard.swift */; };
 		3F6313B3204D9E010099F510 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313B2204D9E010099F510 /* API.swift */; };
+		3F6313B5204D9F910099F510 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313B4204D9F910099F510 /* Environment.swift */; };
 		3FFE9DF9204D930D00C0EADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE9DF8204D930D00C0EADD /* AppDelegate.swift */; };
 		3FFE9DFE204D930D00C0EADD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFE9DFC204D930D00C0EADD /* Main.storyboard */; };
 		3FFE9E00204D930D00C0EADD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFE9DFF204D930D00C0EADD /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		3F6313AB204D9B4F0099F510 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		3F6313AD204D9BAB0099F510 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		3F6313B2204D9E010099F510 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3F6313B4204D9F910099F510 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		3FFE9DF5204D930D00C0EADD /* Github-GraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github-GraphQL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFE9DF8204D930D00C0EADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FFE9DFD204D930D00C0EADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,8 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				3FFE9DF8204D930D00C0EADD /* AppDelegate.swift */,
-				3F6313AB204D9B4F0099F510 /* ModuleBuilder.swift */,
 				3F6313AD204D9BAB0099F510 /* AppStoryboard.swift */,
+				3F6313AB204D9B4F0099F510 /* ModuleBuilder.swift */,
+				3F6313B4204D9F910099F510 /* Environment.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				3F6313A5204D9ABF0099F510 /* RepoPresenter.swift in Sources */,
 				3F6313AE204D9BAB0099F510 /* AppStoryboard.swift in Sources */,
 				3FFE9DF9204D930D00C0EADD /* AppDelegate.swift in Sources */,
+				3F6313B5204D9F910099F510 /* Environment.swift in Sources */,
 				3F6313A8204D9ACF0099F510 /* RepoViewController.swift in Sources */,
 				3F6313B3204D9E010099F510 /* API.swift in Sources */,
 				3F6313AC204D9B4F0099F510 /* ModuleBuilder.swift in Sources */,
