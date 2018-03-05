@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26B141688D4159A36B234571 /* Pods_Github_GraphQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33C9BF1977A0F8F9A176EA5E /* Pods_Github_GraphQL.framework */; };
+		3F6313A5204D9ABF0099F510 /* RepoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313A4204D9ABF0099F510 /* RepoPresenter.swift */; };
+		3F6313A8204D9ACF0099F510 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313A6204D9ACF0099F510 /* RepoViewController.swift */; };
+		3F6313AC204D9B4F0099F510 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313AB204D9B4F0099F510 /* ModuleBuilder.swift */; };
+		3F6313AE204D9BAB0099F510 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313AD204D9BAB0099F510 /* AppStoryboard.swift */; };
+		3F6313B3204D9E010099F510 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6313B2204D9E010099F510 /* API.swift */; };
 		3FFE9DF9204D930D00C0EADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE9DF8204D930D00C0EADD /* AppDelegate.swift */; };
-		3FFE9DFB204D930D00C0EADD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFE9DFA204D930D00C0EADD /* ViewController.swift */; };
 		3FFE9DFE204D930D00C0EADD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFE9DFC204D930D00C0EADD /* Main.storyboard */; };
 		3FFE9E00204D930D00C0EADD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FFE9DFF204D930D00C0EADD /* Assets.xcassets */; };
 		3FFE9E03204D930D00C0EADD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FFE9E01204D930D00C0EADD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33C9BF1977A0F8F9A176EA5E /* Pods_Github_GraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Github_GraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6313A4204D9ABF0099F510 /* RepoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoPresenter.swift; sourceTree = "<group>"; };
+		3F6313A6204D9ACF0099F510 /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		3F6313AB204D9B4F0099F510 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		3F6313AD204D9BAB0099F510 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		3F6313B2204D9E010099F510 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3FFE9DF5204D930D00C0EADD /* Github-GraphQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github-GraphQL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FFE9DF8204D930D00C0EADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FFE9DFA204D930D00C0EADD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FFE9DFD204D930D00C0EADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FFE9DFF204D930D00C0EADD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FFE9E02204D930D00C0EADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FFE9E04204D930E00C0EADD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C97686A5B484246CFC287623 /* Pods-Github-GraphQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github-GraphQL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Github-GraphQL/Pods-Github-GraphQL.debug.xcconfig"; sourceTree = "<group>"; };
+		DDD658C1B64CE50BC5A7B72A /* Pods-Github-GraphQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github-GraphQL.release.xcconfig"; path = "Pods/Target Support Files/Pods-Github-GraphQL/Pods-Github-GraphQL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B141688D4159A36B234571 /* Pods_Github_GraphQL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F63139D204D9A100099F510 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				3F6313B2204D9E010099F510 /* API.swift */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		3F63139E204D9A190099F510 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3F6313A3204D9AB60099F510 /* Repo */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3F63139F204D9A230099F510 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3F6313A0204D9A2D0099F510 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE9DF8204D930D00C0EADD /* AppDelegate.swift */,
+				3F6313AB204D9B4F0099F510 /* ModuleBuilder.swift */,
+				3F6313AD204D9BAB0099F510 /* AppStoryboard.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3F6313A1204D9A3E0099F510 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE9DFC204D930D00C0EADD /* Main.storyboard */,
+				3FFE9E01204D930D00C0EADD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3F6313A2204D9A450099F510 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3FFE9DFF204D930D00C0EADD /* Assets.xcassets */,
+				3FFE9E04204D930E00C0EADD /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3F6313A3204D9AB60099F510 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				3F6313A6204D9ACF0099F510 /* RepoViewController.swift */,
+				3F6313A4204D9ABF0099F510 /* RepoPresenter.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
 		3FFE9DEC204D930D00C0EADD = {
 			isa = PBXGroup;
 			children = (
 				3FFE9DF7204D930D00C0EADD /* Github-GraphQL */,
 				3FFE9DF6204D930D00C0EADD /* Products */,
+				626F6C67E5CAF0634A6D984F /* Pods */,
+				AD37FD7F7E9C71A70D29957A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +129,31 @@
 		3FFE9DF7204D930D00C0EADD /* Github-GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				3FFE9DF8204D930D00C0EADD /* AppDelegate.swift */,
-				3FFE9DFA204D930D00C0EADD /* ViewController.swift */,
-				3FFE9DFC204D930D00C0EADD /* Main.storyboard */,
-				3FFE9DFF204D930D00C0EADD /* Assets.xcassets */,
-				3FFE9E01204D930D00C0EADD /* LaunchScreen.storyboard */,
-				3FFE9E04204D930E00C0EADD /* Info.plist */,
+				3F6313A0204D9A2D0099F510 /* Configuration */,
+				3F63139E204D9A190099F510 /* Modules */,
+				3F63139F204D9A230099F510 /* Extensions */,
+				3F6313A2204D9A450099F510 /* Resources */,
+				3F6313A1204D9A3E0099F510 /* Storyboards */,
+				3F63139D204D9A100099F510 /* GraphQL */,
 			);
 			path = "Github-GraphQL";
+			sourceTree = "<group>";
+		};
+		626F6C67E5CAF0634A6D984F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C97686A5B484246CFC287623 /* Pods-Github-GraphQL.debug.xcconfig */,
+				DDD658C1B64CE50BC5A7B72A /* Pods-Github-GraphQL.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD37FD7F7E9C71A70D29957A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33C9BF1977A0F8F9A176EA5E /* Pods_Github_GraphQL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +163,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FFE9E07204D930E00C0EADD /* Build configuration list for PBXNativeTarget "Github-GraphQL" */;
 			buildPhases = (
+				3F63139B204D93CD0099F510 /* Generate GraphQL schema */,
+				DFA2D564E1C9533403890394 /* [CP] Check Pods Manifest.lock */,
 				3FFE9DF1204D930D00C0EADD /* Sources */,
 				3FFE9DF2204D930D00C0EADD /* Frameworks */,
 				3FFE9DF3204D930D00C0EADD /* Resources */,
+				5ED91268113C645658C994A3 /* [CP] Embed Pods Frameworks */,
+				31F85AABD21EA509DFBCCB81 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +227,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31F85AABD21EA509DFBCCB81 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Github-GraphQL/Pods-Github-GraphQL-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F63139B204D93CD0099F510 /* Generate GraphQL schema */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate GraphQL schema";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Apollo/scripts/check-and-run-apollo-codegen.sh \\\ngenerate $(find ${PROJECT_DIR}/Github-GraphQL/GraphQL/ -name '*.graphql') \\\n--schema schema.json \\\n--output ${PROJECT_DIR}/Github-GraphQL/GraphQL/API.swift";
+		};
+		5ED91268113C645658C994A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Github-GraphQL/Pods-Github-GraphQL-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Github-GraphQL/Pods-Github-GraphQL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFA2D564E1C9533403890394 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Github-GraphQL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3FFE9DF1204D930D00C0EADD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FFE9DFB204D930D00C0EADD /* ViewController.swift in Sources */,
+				3F6313A5204D9ABF0099F510 /* RepoPresenter.swift in Sources */,
+				3F6313AE204D9BAB0099F510 /* AppStoryboard.swift in Sources */,
 				3FFE9DF9204D930D00C0EADD /* AppDelegate.swift in Sources */,
+				3F6313A8204D9ACF0099F510 /* RepoViewController.swift in Sources */,
+				3F6313B3204D9E010099F510 /* API.swift in Sources */,
+				3F6313AC204D9B4F0099F510 /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,10 +440,11 @@
 		};
 		3FFE9E08204D930E00C0EADD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C97686A5B484246CFC287623 /* Pods-Github-GraphQL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Github-GraphQL/Info.plist";
+				INFOPLIST_FILE = "Github-GraphQL/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.evgheniinicolaev.Github-GraphQL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,10 +455,11 @@
 		};
 		3FFE9E09204D930E00C0EADD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD658C1B64CE50BC5A7B72A /* Pods-Github-GraphQL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Github-GraphQL/Info.plist";
+				INFOPLIST_FILE = "Github-GraphQL/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.evgheniinicolaev.Github-GraphQL";
 				PRODUCT_NAME = "$(TARGET_NAME)";
