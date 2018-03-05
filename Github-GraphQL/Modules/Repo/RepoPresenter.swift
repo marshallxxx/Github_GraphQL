@@ -14,9 +14,11 @@ protocol RepoPresenterType {
 
 class RepoPresenter: RepoPresenterType {
     unowned var view: RepoView
-
-    init(view: RepoView) {
-    self.view = view
+    unowned var coordinator: RepoCoordinatorType
+    
+    init(view: RepoView, coordinator: RepoCoordinatorType) {
+        self.view = view
+        self.coordinator = coordinator
     }
 
 }

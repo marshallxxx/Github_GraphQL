@@ -12,13 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var services: ServiceContainer!
+    var rootCoordinator: Coordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        let environment = DefaultEnvironment()
+        services = DefaultServiceContainer(environment: environment)
         window = UIWindow(frame: UIScreen.main.bounds)
-        let initialViewController = ModuleBuilder.shared.buildRepoModule()
-        window?.rootViewController = initialViewController 
+
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        rootCoordinator = RepoCoordinator(services: services,
+                                          navigationController: navigationController)
+        rootCoordinator.start()
+
         window?.makeKeyAndVisible()
 
         return true
