@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ServiceContainer {
-    
+    var gitHubAPI: GitHubAPI! { get }
 }
 
 struct DefaultServiceContainer: ServiceContainer {
@@ -18,6 +18,11 @@ struct DefaultServiceContainer: ServiceContainer {
 
     init(environment: Environment) {
         self.environment = environment
+    }
+
+    var gitHubAPI: GitHubAPI! {
+        return GraphQLGithubAPI(graphQLUrl: environment.githubGraphQLUrl,
+                                authorization: environment.githubPersonalAccessToken)
     }
 
 }

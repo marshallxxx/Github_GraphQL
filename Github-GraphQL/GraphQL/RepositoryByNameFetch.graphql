@@ -1,0 +1,22 @@
+query RepositoryByName($repoName: String!) {
+  search(type: REPOSITORY, query: $repoName, first: 20) {
+  	edges {
+      node {
+        ... on Repository {
+          name
+          description
+          languages(first: 1) {
+            nodes {
+              ... on Language {
+               	name
+              }
+            }
+          }
+          stargazers {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}

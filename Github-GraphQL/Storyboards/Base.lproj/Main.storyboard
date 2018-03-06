@@ -6,23 +6,83 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Repo View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="YDB-G3-6E8">
             <objects>
-                <viewController storyboardIdentifier="RepoViewController" id="BYZ-38-t0r" customClass="RepoViewController" customModule="Github_GraphQL" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController storyboardIdentifier="RepoViewController" id="UU0-6v-EQS" customClass="RepoViewController" customModule="Github_GraphQL" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vek-Kx-Gxb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoTableViewCell" rowHeight="87" id="zoc-oM-V8j" customClass="RepoTableViewCell" customModule="Github_GraphQL" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="87"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zoc-oM-V8j" id="Xd0-lK-Fxy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1M-4G-bBd">
+                                            <rect key="frame" x="16" y="16" width="52.5" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="200" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgB-er-s7f">
+                                            <rect key="frame" x="16" y="49.5" width="221" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPd-YY-9PM">
+                                            <rect key="frame" x="317" y="49.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-K5-6cI">
+                                            <rect key="frame" x="332" y="18" width="27" height="22"/>
+                                            <state key="normal" title="0" image="star_icon">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="mgB-er-s7f" secondAttribute="bottom" constant="16" id="3Rr-yG-G3r"/>
+                                        <constraint firstItem="D1M-4G-bBd" firstAttribute="leading" secondItem="Xd0-lK-Fxy" secondAttribute="leading" constant="16" id="5Hx-G4-QZW"/>
+                                        <constraint firstItem="sC6-K5-6cI" firstAttribute="centerY" secondItem="D1M-4G-bBd" secondAttribute="centerY" id="8nv-Hk-LpN"/>
+                                        <constraint firstItem="D1M-4G-bBd" firstAttribute="top" secondItem="Xd0-lK-Fxy" secondAttribute="top" constant="16" id="9K8-gq-VIo"/>
+                                        <constraint firstItem="mgB-er-s7f" firstAttribute="top" secondItem="D1M-4G-bBd" secondAttribute="bottom" constant="6.5" id="FG3-ka-LOz"/>
+                                        <constraint firstAttribute="trailing" secondItem="YPd-YY-9PM" secondAttribute="trailing" constant="16" id="Hdj-ck-RNP"/>
+                                        <constraint firstAttribute="trailing" secondItem="sC6-K5-6cI" secondAttribute="trailing" constant="16" id="LVM-EL-rbX"/>
+                                        <constraint firstItem="mgB-er-s7f" firstAttribute="leading" secondItem="Xd0-lK-Fxy" secondAttribute="leading" constant="16" id="YiG-Yq-PF0"/>
+                                        <constraint firstItem="YPd-YY-9PM" firstAttribute="leading" secondItem="mgB-er-s7f" secondAttribute="trailing" constant="80" id="mmZ-5s-MY2"/>
+                                        <constraint firstItem="YPd-YY-9PM" firstAttribute="centerY" secondItem="mgB-er-s7f" secondAttribute="centerY" id="yLt-hV-x1W"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="languageNameLabel" destination="YPd-YY-9PM" id="Np8-bB-fgd"/>
+                                    <outlet property="repoDescription" destination="mgB-er-s7f" id="98E-Ww-xMB"/>
+                                    <outlet property="repoLikesButton" destination="sC6-K5-6cI" id="b01-Yb-dTS"/>
+                                    <outlet property="repoNameLabel" destination="D1M-4G-bBd" id="Zhj-J8-Ca8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UU0-6v-EQS" id="ufq-V9-bR8"/>
+                            <outlet property="delegate" destination="UU0-6v-EQS" id="j3j-h1-Xvs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TON-g6-pCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-135.19999999999999" y="-4.0479760119940034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star_icon" width="16" height="16"/>
+    </resources>
 </document>

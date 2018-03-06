@@ -7,18 +7,24 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol RepoPresenterType {
-
+    func searchRepositories(with name: String) -> Single<[Repository]>
 }
 
 class RepoPresenter: RepoPresenterType {
-    unowned var view: RepoView
-    unowned var coordinator: RepoCoordinatorType
-    
-    init(view: RepoView, coordinator: RepoCoordinatorType) {
-        self.view = view
+    private unowned var coordinator: RepoCoordinatorType
+    private var githubApi: GitHubAPI
+
+    init(coordinator: RepoCoordinatorType,
+         githubApi: GitHubAPI) {
         self.coordinator = coordinator
+        self.githubApi = githubApi
+    }
+
+    func searchRepositories(with name: String) -> Single<[Repository]> {
+        return githubApi.fetchRepositoriesByName(name: name)
     }
 
 }

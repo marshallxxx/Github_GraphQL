@@ -7,4 +7,7 @@ target 'Github-GraphQL' do
 
   pod 'Apollo', '~> 0.7.0'
 
+  pod 'RxSwift',    '~> 4.0'
+  pod 'RxCocoa',    '~> 4.0'
+
 end

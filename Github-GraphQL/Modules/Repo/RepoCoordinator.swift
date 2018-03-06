@@ -32,7 +32,8 @@ class RepoCoordinator: RepoCoordinatorType {
         let viewController = storyboard.reference()
             .instantiateViewController(withIdentifier: viewControllerIdentifier)
             as! RepoViewController
-        let presenter = RepoPresenter(view: viewController, coordinator: self)
+        let presenter = RepoPresenter(coordinator: self,
+                                      githubApi: services.gitHubAPI)
         viewController.presenter = presenter
         return viewController
     }
