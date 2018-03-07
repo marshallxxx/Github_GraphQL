@@ -15,11 +15,13 @@ enum GraphQLGithubAPIError: Error {
     case noQueryResult
     case errorsInQueryResult([Error])
     case noQueryResultData
-    case fetchTaskCancelled
+    case taskCancelled
     case unauthorized
 }
 
 class GraphQLGithubAPI: GitHubAPI {
+
+    private let responsesPerPage: Int = 20
 
     private var apolloClient: ApolloClient
 
@@ -30,15 +32,17 @@ class GraphQLGithubAPI: GitHubAPI {
         self.apolloClient = ApolloClient(networkTransport: HTTPNetworkTransport(url: graphQLUrl, configuration: configuration))
     }
 
+    /// Fetches repositories by name
     func fetchRepositoriesByName(name: String) -> Single<[Repository]> {
-        return Single.create { [weak self] (single) -> Disposable in
+        return Single.create(subscribe: { [weak self] (single) -> Disposable in
             guard let `self` = self else {
-                single(.error(GraphQLGithubAPIError.fetchTaskCancelled))
+                single(.error(GraphQLGithubAPIError.taskCancelled))
                 return Disposables.create()
             }
 
             // Perform GraphQL query
-            let task = self.apolloClient.fetch(query: RepositoryByNameQuery(repoName: name)) { result, error in
+            let query = RepositoryByNameFetchQuery(repoName: name, numberOfItems: self.responsesPerPage)
+            let task = self.apolloClient.fetch(query: query) { result, error in
                 // Sanitize GraphQL result
                 if let error = self.sanitizeQueryResponse(result: result, error: error) {
                     single(.error(error))
@@ -49,13 +53,71 @@ class GraphQLGithubAPI: GitHubAPI {
                 let repositories = result!.data!.search.edges?.flatMap({ edge in
                     return edge?.node?.asRepository
                 }).map({ (repository) -> Repository in
-                    return Repository(name: repository.name,
+                    let owner = repository.owner.asUser?.name ?? repository.owner.asOrganization?.name
+                    return Repository(id: repository.id,
+                                      name: repository.name,
                                       description: repository.description,
                                       numberOfStars: repository.stargazers.totalCount,
-                                      primaryLanguage: repository.languages!.nodes?.first??.name)
+                                      primaryLanguage: repository.languages!.nodes?.first??.name,
+                                      owner: owner,
+                                      isStarredByUser: repository.viewerHasStarred)
                 })
                 
                 single(.success(repositories ?? []))
+            }
+
+            return Disposables.create {
+                task.cancel()
+            }
+        })
+    }
+
+    /// Stars repository
+    func starRepository(repositoryId: String) -> Single<Int> {
+        return Single.create { [weak self] (single) -> Disposable in
+            guard let `self` = self else {
+                single(.error(GraphQLGithubAPIError.taskCancelled))
+                return Disposables.create()
+            }
+
+            let mutation = StarRepositoryMutation(repositoryID: repositoryId)
+            let task = self.apolloClient.perform(mutation: mutation) { result, error in
+                // Sanitize GraphQL result
+                if let error = self.sanitizeQueryResponse(result: result, error: error) {
+                    single(.error(error))
+                    return
+                }
+
+                // Parse response
+                let numberOfStars = result!.data!.addStar?.starrable.stargazers.totalCount
+                single(.success(numberOfStars ?? 0))
+            }
+
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
+
+    /// Unstar repository
+    func unstarRepository(repositoryId: String) -> Single<Int> {
+        return Single.create { [weak self] (single) -> Disposable in
+            guard let `self` = self else {
+                single(.error(GraphQLGithubAPIError.taskCancelled))
+                return Disposables.create()
+            }
+
+            let mutation = UnstarRepositoryMutation(repositoryID: repositoryId)
+            let task = self.apolloClient.perform(mutation: mutation) { result, error in
+                // Sanitize GraphQL result
+                if let error = self.sanitizeQueryResponse(result: result, error: error) {
+                    single(.error(error))
+                    return
+                }
+
+                // Parse response
+                let numberOfStars = result!.data!.removeStar?.starrable.stargazers.totalCount
+                single(.success(numberOfStars ?? 0))
             }
 
             return Disposables.create {

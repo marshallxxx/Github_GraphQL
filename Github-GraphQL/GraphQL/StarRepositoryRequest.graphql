@@ -1,0 +1,12 @@
+mutation StarRepository($repositoryID: ID!) {
+  addStar(input: {
+    starrableId: $repositoryID
+  }) {
+    starrable {
+      viewerHasStarred
+      stargazers {
+        totalCount
+      }
+    }
+  }
+}

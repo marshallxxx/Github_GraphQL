@@ -1,14 +1,24 @@
-query RepositoryByName($repoName: String!) {
-  search(type: REPOSITORY, query: $repoName, first: 20) {
-  	edges {
+query RepositoryByNameFetch($repoName: String!, $numberOfItems: Int = 20) {
+  search(type: REPOSITORY, query: $repoName, first: $numberOfItems) {
+    edges {
       node {
         ... on Repository {
+          owner {
+            ... on User {
+              name
+            }
+            ... on Organization {
+              name
+            }
+          }
+          id
           name
           description
+          viewerHasStarred
           languages(first: 1) {
             nodes {
               ... on Language {
-               	name
+                name
               }
             }
           }

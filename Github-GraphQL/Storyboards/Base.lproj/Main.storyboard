@@ -9,45 +9,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Repo View Controller-->
+        <!--Repository Search View Controller-->
         <scene sceneID="YDB-G3-6E8">
             <objects>
-                <tableViewController storyboardIdentifier="RepoViewController" id="UU0-6v-EQS" customClass="RepoViewController" customModule="Github_GraphQL" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RepositorySearchViewController" id="UU0-6v-EQS" customClass="RepositorySearchViewController" customModule="Github_GraphQL" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vek-Kx-Gxb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoTableViewCell" rowHeight="87" id="zoc-oM-V8j" customClass="RepoTableViewCell" customModule="Github_GraphQL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="87"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryTableViewCell" rowHeight="109" id="zoc-oM-V8j" customClass="RepositoryTableViewCell" customModule="Github_GraphQL" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zoc-oM-V8j" id="Xd0-lK-Fxy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="108.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1M-4G-bBd">
-                                            <rect key="frame" x="16" y="16" width="52.5" height="27"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1M-4G-bBd">
+                                            <rect key="frame" x="16" y="16" width="296" height="29.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMY-rm-Pmw">
+                                            <rect key="frame" x="16" y="45.5" width="37.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="200" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgB-er-s7f">
-                                            <rect key="frame" x="16" y="49.5" width="221" height="21"/>
+                                            <rect key="frame" x="16" y="71.5" width="221" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPd-YY-9PM">
-                                            <rect key="frame" x="317" y="49.5" width="42" height="21"/>
+                                            <rect key="frame" x="317" y="71.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-K5-6cI">
-                                            <rect key="frame" x="332" y="18" width="27" height="22"/>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC6-K5-6cI">
+                                            <rect key="frame" x="332" y="20.5" width="27" height="22"/>
                                             <state key="normal" title="0" image="star_icon">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="starButtonPressed:" destination="zoc-oM-V8j" eventType="touchUpInside" id="nRa-HV-Jxq"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -55,15 +64,19 @@
                                         <constraint firstItem="D1M-4G-bBd" firstAttribute="leading" secondItem="Xd0-lK-Fxy" secondAttribute="leading" constant="16" id="5Hx-G4-QZW"/>
                                         <constraint firstItem="sC6-K5-6cI" firstAttribute="centerY" secondItem="D1M-4G-bBd" secondAttribute="centerY" id="8nv-Hk-LpN"/>
                                         <constraint firstItem="D1M-4G-bBd" firstAttribute="top" secondItem="Xd0-lK-Fxy" secondAttribute="top" constant="16" id="9K8-gq-VIo"/>
-                                        <constraint firstItem="mgB-er-s7f" firstAttribute="top" secondItem="D1M-4G-bBd" secondAttribute="bottom" constant="6.5" id="FG3-ka-LOz"/>
                                         <constraint firstAttribute="trailing" secondItem="YPd-YY-9PM" secondAttribute="trailing" constant="16" id="Hdj-ck-RNP"/>
                                         <constraint firstAttribute="trailing" secondItem="sC6-K5-6cI" secondAttribute="trailing" constant="16" id="LVM-EL-rbX"/>
                                         <constraint firstItem="mgB-er-s7f" firstAttribute="leading" secondItem="Xd0-lK-Fxy" secondAttribute="leading" constant="16" id="YiG-Yq-PF0"/>
+                                        <constraint firstItem="GMY-rm-Pmw" firstAttribute="leading" secondItem="Xd0-lK-Fxy" secondAttribute="leading" constant="16" id="ZA5-LR-XdO"/>
+                                        <constraint firstItem="sC6-K5-6cI" firstAttribute="leading" secondItem="D1M-4G-bBd" secondAttribute="trailing" constant="20" id="cT8-0l-Dw2"/>
+                                        <constraint firstItem="mgB-er-s7f" firstAttribute="top" secondItem="GMY-rm-Pmw" secondAttribute="bottom" constant="8" id="iLe-Yb-WAS"/>
+                                        <constraint firstItem="GMY-rm-Pmw" firstAttribute="top" secondItem="D1M-4G-bBd" secondAttribute="bottom" id="jre-WP-xmJ"/>
                                         <constraint firstItem="YPd-YY-9PM" firstAttribute="leading" secondItem="mgB-er-s7f" secondAttribute="trailing" constant="80" id="mmZ-5s-MY2"/>
                                         <constraint firstItem="YPd-YY-9PM" firstAttribute="centerY" secondItem="mgB-er-s7f" secondAttribute="centerY" id="yLt-hV-x1W"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="authorNameLabel" destination="GMY-rm-Pmw" id="9n8-V4-2Rn"/>
                                     <outlet property="languageNameLabel" destination="YPd-YY-9PM" id="Np8-bB-fgd"/>
                                     <outlet property="repoDescription" destination="mgB-er-s7f" id="98E-Ww-xMB"/>
                                     <outlet property="repoLikesButton" destination="sC6-K5-6cI" id="b01-Yb-dTS"/>

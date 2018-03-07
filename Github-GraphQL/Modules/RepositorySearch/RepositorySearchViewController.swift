@@ -1,5 +1,5 @@
 //
-//  RepoViewController.swift
+//  RepositorySearchViewController.swift
 //  Github-GraphQL
 //
 //  Created by Evghenii Nicolaev on 05/03/2018.
@@ -10,11 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RepoViewController: UITableViewController {
+class RepositorySearchViewController: UITableViewController,
+RepositoryTableViewCellDelegate {
 
-    private let cellIdentifier = String(describing: RepoTableViewCell.self)
+    private let cellIdentifier = String(describing: RepositoryTableViewCell.self)
     private lazy var searhcController = UISearchController.make()
-    var presenter: RepoPresenterType!
+    var presenter: RepositorySearchPresenterType!
     private var repositories: [Repository] = []
     private var disposeBag = DisposeBag()
 
@@ -52,6 +53,48 @@ class RepoViewController: UITableViewController {
             .disposed(by: disposeBag)
     }
 
+    // MARK: - RepositoryTableViewCellDelegate
+
+    func starRepositoory(with id: String) {
+        presenter.starRepository(with: id)
+            .subscribe(onSuccess: { [weak self] (numberOfStars) in
+                if let `self` = self,
+                    var repository = self.findRepository(with: id) {
+                    repository.numberOfStars = numberOfStars
+                    repository.isStarredByUser = true
+                    self.replaceRepository(with: repository)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func unstarRepositoory(with id: String) {
+        presenter.unstarRepository(with: id)
+            .subscribe(onSuccess: { [weak self] (numberOfStars) in
+                if let `self` = self,
+                    var repository = self.findRepository(with: id) {
+                    repository.numberOfStars = numberOfStars
+                    repository.isStarredByUser = false
+                    self.replaceRepository(with: repository)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func findRepository(with id: String) -> Repository? {
+        return repositories.first(where: { (repo) -> Bool in
+            return repo.id == id
+        })
+    }
+
+    private func replaceRepository(with repository: Repository) {
+        if let index = repositories.index(of: repository) {
+            repositories.remove(at: index)
+            repositories.insert(repository, at: index)
+            tableView.reloadData()
+        }
+    }
+
     // MARK: - UITableViewDataSource
 
     override func tableView(_ tableView: UITableView,
@@ -62,8 +105,9 @@ class RepoViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier,
-                                                 for: indexPath) as! RepoTableViewCell
+                                                 for: indexPath) as! RepositoryTableViewCell
         cell.configure(with: repositories[indexPath.row])
+        cell.delegate = self
         return cell
     }
 

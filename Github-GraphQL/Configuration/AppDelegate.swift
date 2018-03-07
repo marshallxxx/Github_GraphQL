@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let navigationController = UINavigationController()
         window?.rootViewController = navigationController
-        rootCoordinator = RepoCoordinator(services: services,
-                                          navigationController: navigationController)
+        rootCoordinator = RepositorySearchCoordinator(services: services,
+                                                      navigationController: navigationController)
         rootCoordinator.start()
 
         window?.makeKeyAndVisible()

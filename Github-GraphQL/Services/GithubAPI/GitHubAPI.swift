@@ -11,4 +11,6 @@ import RxSwift
 
 protocol GitHubAPI {
     func fetchRepositoriesByName(name: String) -> Single<[Repository]>
+    func starRepository(repositoryId: String) -> Single<Int>
+    func unstarRepository(repositoryId: String) -> Single<Int>
 }
